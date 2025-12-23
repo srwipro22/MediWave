@@ -1,0 +1,4 @@
+com\mediwave\resource\kafka\KafkaEventConsumer.class
+com\mediwave\resource\service\ResourceManagementService.class
+com\mediwave\resource\config\KafkaConfig.class
+com\mediwave\resource\ResourceManagementServiceApplication.class

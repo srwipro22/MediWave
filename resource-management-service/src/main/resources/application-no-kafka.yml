@@ -1,0 +1,11 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: resource-management-service
+
+# Kafka disabled for standalone mode
+logging:
+  level:
+    com.mediwave.resource: DEBUG

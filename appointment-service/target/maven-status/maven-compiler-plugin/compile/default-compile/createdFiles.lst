@@ -1,0 +1,8 @@
+com\mediwave\appointment\AppointmentServiceApplication.class
+com\mediwave\appointment\config\KafkaConfig.class
+com\mediwave\appointment\entity\Appointment$AppointmentBuilder.class
+com\mediwave\appointment\service\AppointmentService.class
+com\mediwave\appointment\repository\AppointmentRepository.class
+com\mediwave\appointment\entity\Appointment.class
+com\mediwave\appointment\kafka\KafkaEventConsumer.class
+com\mediwave\appointment\controller\AppointmentController.class

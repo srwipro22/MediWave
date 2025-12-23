@@ -1,0 +1,5 @@
+C:\Users\Administrator\CascadeProjects\MediWave\common\src\main\java\com\mediwave\common\dto\AppointmentDTO.java
+C:\Users\Administrator\CascadeProjects\MediWave\common\src\main\java\com\mediwave\common\event\AppointmentBookedEvent.java
+C:\Users\Administrator\CascadeProjects\MediWave\common\src\main\java\com\mediwave\common\event\ResourceAllocatedEvent.java
+C:\Users\Administrator\CascadeProjects\MediWave\common\src\main\java\com\mediwave\common\config\KafkaTopics.java
+C:\Users\Administrator\CascadeProjects\MediWave\common\src\main\java\com\mediwave\common\event\BillingProcessedEvent.java

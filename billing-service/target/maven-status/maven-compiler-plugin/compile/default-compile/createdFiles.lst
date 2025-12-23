@@ -1,0 +1,4 @@
+com\mediwave\billing\service\BillingService.class
+com\mediwave\billing\BillingServiceApplication.class
+com\mediwave\billing\kafka\KafkaEventConsumer.class
+com\mediwave\billing\config\KafkaConfig.class

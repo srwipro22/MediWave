@@ -1,0 +1,24 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: resource-management-service
+
+kafka:
+  bootstrap-servers: localhost:9092
+  consumer:
+    group-id: resource-management-service
+    auto-offset-reset: earliest
+    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+    properties:
+      spring.json.trusted.packages: com.mediwave.common.event,com.mediwave.common.dto
+  producer:
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+logging:
+  level:
+    com.mediwave.resource: DEBUG
+    org.springframework.kafka: DEBUG

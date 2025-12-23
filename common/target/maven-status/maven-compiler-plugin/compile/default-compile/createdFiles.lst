@@ -1,0 +1,12 @@
+com\mediwave\common\config\KafkaTopics.class
+com\mediwave\common\event\AppointmentBookedEvent$AppointmentBookedEventBuilder.class
+com\mediwave\common\dto\AppointmentDTO$AppointmentStatus.class
+com\mediwave\common\dto\AppointmentDTO.class
+com\mediwave\common\event\ResourceAllocatedEvent$AllocationStatus.class
+com\mediwave\common\dto\AppointmentDTO$AppointmentDTOBuilder.class
+com\mediwave\common\event\AppointmentBookedEvent.class
+com\mediwave\common\event\BillingProcessedEvent$BillingProcessedEventBuilder.class
+com\mediwave\common\event\BillingProcessedEvent$BillingStatus.class
+com\mediwave\common\event\BillingProcessedEvent.class
+com\mediwave\common\event\ResourceAllocatedEvent$ResourceAllocatedEventBuilder.class
+com\mediwave\common\event\ResourceAllocatedEvent.class

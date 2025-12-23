@@ -1,0 +1,7 @@
+com\mediwave\ui\dto\AppointmentRequest.class
+com\mediwave\ui\config\WebConfig.class
+com\mediwave\ui\controller\WebController.class
+com\mediwave\ui\service\AppointmentServiceClient.class
+com\mediwave\ui\UiApplication.class
+com\mediwave\ui\dto\AppointmentResponse.class
+com\mediwave\ui\dto\AppointmentStatusUpdate.class

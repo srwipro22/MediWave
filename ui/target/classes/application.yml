@@ -1,0 +1,14 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: mediwave-ui
+  
+  thymeleaf:
+    cache: false
+
+logging:
+  level:
+    com.mediwave.ui: DEBUG
+    org.springframework.web.reactive.function.client: DEBUG

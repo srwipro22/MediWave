@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Details - MediWave</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-heartbeat me-2"></i>MediWave
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" th:href="@{/}">New Appointment</a>
+                <a class="nav-link" th:href="@{/appointments}">All Appointments</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">
+                            <i class="fas fa-calendar-alt me-2"></i>Appointment Details
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <div th:if="${error}" class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            <span th:text="${error}"></span>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+
+                        <div th:if="${appointment}" class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label text-muted">Appointment ID</label>
+                                    <p class="form-control-plaintext fw-bold" th:text="${appointment.id}">123</p>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-muted">Patient ID</label>
+                                    <p class="form-control-plaintext" th:text="${appointment.patientId}">456</p>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-muted">Doctor ID</label>
+                                    <p class="form-control-plaintext" th:text="${appointment.doctorId}">789</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label text-muted">Appointment Date & Time</label>
+                                    <p class="form-control-plaintext" th:text="${#temporals.format(appointment.appointmentDate, 'yyyy-MM-dd HH:mm')}">2024-01-15 10:30</p>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-muted">Type</label>
+                                    <p class="form-control-plaintext" th:text="${appointment.appointmentType}">General</p>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-muted">Status</label>
+                                    <p>
+                                        <span th:class="${'badge ' + #strings.toLowerCase(appointment.status) == 'scheduled' ? 'bg-warning' : 
+                                                       #strings.toLowerCase(appointment.status) == 'confirmed' ? 'bg-success' : 
+                                                       #strings.toLowerCase(appointment.status) == 'cancelled' ? 'bg-danger' : 
+                                                       #strings.toLowerCase(appointment.status) == 'billing_failed' ? 'bg-danger' : 
+                                                       #strings.toLowerCase(appointment.status) == 'resource_unavailable' ? 'bg-warning' : 'bg-secondary'}"
+                                              th:text="${appointment.status}">SCHEDULED</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label text-muted">Notes</label>
+                                    <p class="form-control-plaintext" th:text="${appointment.notes != null ? appointment.notes : 'No notes provided'}">Regular checkup</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between mt-4">
+                            <a th:href="@{/appointments}" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left me-2"></i>Back to List
+                            </a>
+                            <div class="btn-group" role="group">
+                                <a th:href="@{/appointments/{id}/status(id=${appointment.id}, status='CONFIRMED')}" class="btn btn-success">
+                                    <i class="fas fa-check me-2"></i>Confirm
+                                </a>
+                                <a th:href="@{/appointments/{id}/status(id=${appointment.id}, status='CANCELLED')}" class="btn btn-danger">
+                                    <i class="fas fa-times me-2"></i>Cancel
+                                </a>
+                                <a th:href="@{/appointments/{id}/status(id=${appointment.id}, status='COMPLETED')}" class="btn btn-info">
+                                    <i class="fas fa-check-circle me-2"></i>Complete
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
